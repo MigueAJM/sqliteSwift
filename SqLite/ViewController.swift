@@ -82,25 +82,26 @@ class ViewController: UIViewController {
             }
         }
     }
-    @IBAction func btnconsultar(_ sender: UIButton) {
-        registro.removeAll()
-        //alerta(title: "hola", message: "")
-        let query = "Select * From Usuario Order By nombre"
-        if sqlite3_prepare(db, query, -1, &stmt, nil) != SQLITE_OK {
-            let error = String(cString: sqlite3_errmsg(db))
-            alerta(title: "error", message: "Error en la DB \(error)")
-            return
-        }
-        while sqlite3_step(stmt) == SQLITE_ROW {
-            let clave = String(cString: sqlite3_column_text(stmt, 0))
-            let nombre = sqlite3_column_text(stmt, 1)
-            let peso = String(cString: sqlite3_column_text(stmt, 2))
-            let altura = String(cString: sqlite3_column_text(stmt, 3))
-            let imc = String(cString: sqlite3_column_text(stmt, 4))
-            registro.append(Registro(clave: Int(clave)!, nombre: String(describing: nombre), peso: Double(peso)!, altura: Double(altura)!, imc: Double(imc)!))
-        }
-        self.performSegue(withIdentifier: "SLista", sender: self)
+    @IBAction func btnconsulta(_ sender: UIButton) {
+            registro.removeAll()
+            //alerta(title: "hola", message: "")
+            let query = "Select * From Usuario Order By nombre"
+            if sqlite3_prepare(db, query, -1, &stmt, nil) != SQLITE_OK {
+                let error = String(cString: sqlite3_errmsg(db))
+                alerta(title: "error", message: "Error en la DB \(error)")
+                return
+            }
+            while sqlite3_step(stmt) == SQLITE_ROW {
+                let clave = String(cString: sqlite3_column_text(stmt, 0))
+                let nombre = String(cString: sqlite3_column_text(stmt, 1))
+                let peso = String(cString: sqlite3_column_text(stmt, 2))
+                let altura = String(cString: sqlite3_column_text(stmt, 3))
+                let imc = String(cString: sqlite3_column_text(stmt, 4))
+                registro.append(Registro(clave: Int(clave)!, nombre: String(describing: nombre), peso: Double(peso)!, altura: Double(altura)!, imc: Double(imc)!))
+            }
+            self.performSegue(withIdentifier: "SLista", sender: self)
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "SLista" {
             let lista = segue.destination as! TableViewController
