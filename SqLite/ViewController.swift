@@ -26,11 +26,27 @@ class ViewController: UIViewController {
             return
         }
         let CreateTable = "Create Table If Not Exists Usuario(clave Integer Primary Key, nombre Text, peso Integer, altura Real, imc Real)"
+        let tablelogin = "Create Table If Not Exists Login(email Text Primary Key, password Text)"
         if sqlite3_exec(db, CreateTable, nil, nil, nil) != SQLITE_OK{
-            alerta(title: "Error", message: "No se creo la Tabla")
+            alerta(title: "Error", message: "No se creo la Usuario")
+            return
+        }
+        if sqlite3_exec(db, tablelogin, nil, nil, nil) != SQLITE_OK{
+            alerta(title: "Error", message: "No se creo login")
             return
         }
         alerta(title: "Exito", message: "Se creo DB")
+        let query = "Select email, password From Login"
+        if sqlite3_exec(db, query, nil, nil, nil) != SQLITE_OK{
+            
+        }
+      /*  if sqlite3_prepare(db, query, -1, &stmt, nil) != SQLITE_OK{
+            let error = String(cString: sqlite3_errmsg(db))
+            alerta(title: "Error", message: "Error \(error)")
+            return
+        }else if sqlite3_step(stmt) == SQLITE_ROW{
+            self.performSegue(withIdentifier: "Slogin", sender: self)
+        }*/
         // Do any additional setup after loading the view.
     }
     @IBAction func btnguardar(_ sender: UIButton) {
@@ -106,6 +122,8 @@ class ViewController: UIViewController {
         if segue.identifier == "SLista" {
             let lista = segue.destination as! TableViewController
             lista.registro = registro
+        }else if segue.identifier == "Slogin"{
+             _ = segue.destination as! ViewControllerlogin
         }
     }
     func alerta (title: String, message: String){

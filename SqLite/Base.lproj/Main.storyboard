@@ -89,11 +89,61 @@
                         <outlet property="txtnom" destination="brO-7M-8wW" id="meu-p9-LeF"/>
                         <outlet property="txtpeso" destination="mde-S4-SAg" id="Bpa-hn-Lko"/>
                         <segue destination="vQR-sA-slg" kind="show" identifier="SLista" id="JKs-R2-8y0"/>
+                        <segue destination="Idd-wd-dXP" kind="show" identifier="Slogin" id="eYH-8h-gvx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="130.40000000000001" y="116.49175412293854"/>
+        </scene>
+        <!--View Controllerlogin-->
+        <scene sceneID="9Db-rr-Keq">
+            <objects>
+                <viewController id="Idd-wd-dXP" customClass="ViewControllerlogin" customModule="SqLite" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zHv-TL-3qi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Iniciar sesiòn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M9y-27-Az5">
+                                <rect key="frame" x="96" y="203" width="183" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Usuario o email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TkH-vR-y9z">
+                                <rect key="frame" x="93" y="283" width="188" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="34T-G2-RkQ">
+                                <rect key="frame" x="96" y="325" width="183" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="91W-s6-L6Z">
+                                <rect key="frame" x="241" y="367" width="38" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="btnLogin:" destination="Idd-wd-dXP" eventType="touchUpInside" id="qCV-8g-Hmv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="zXp-jA-ez8"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="3mz-cE-APW"/>
+                    <connections>
+                        <outlet property="txtpsw" destination="34T-G2-RkQ" id="d4s-Yk-9L4"/>
+                        <outlet property="txtuser" destination="TkH-vR-y9z" id="0tk-9h-mTK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pce-Li-cQL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="128.80000000000001" y="850.52473763118451"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="F46-Mi-ECR">

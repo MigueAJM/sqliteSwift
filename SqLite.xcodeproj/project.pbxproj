@@ -16,6 +16,7 @@
 		80A60B13240FEE2300A2125B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80A60B11240FEE2300A2125B /* Main.storyboard */; };
 		80A60B15240FEE2600A2125B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80A60B14240FEE2600A2125B /* Assets.xcassets */; };
 		80A60B18240FEE2600A2125B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80A60B16240FEE2600A2125B /* LaunchScreen.storyboard */; };
+		9F1E428524132E1700B36923 /* ViewControllerlogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1E428424132E1700B36923 /* ViewControllerlogin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		80A60B14240FEE2600A2125B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		80A60B17240FEE2600A2125B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		80A60B19240FEE2600A2125B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F1E428424132E1700B36923 /* ViewControllerlogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerlogin.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				804297A4240FFEC7009A0850 /* TableViewController.swift */,
 				804297A6240FFEFB009A0850 /* TableViewCell.swift */,
 				804297A8240FFF92009A0850 /* Registro.swift */,
+				9F1E428424132E1700B36923 /* ViewControllerlogin.swift */,
 			);
 			path = SqLite;
 			sourceTree = "<group>";
@@ -149,6 +152,7 @@
 			files = (
 				804297A7240FFEFB009A0850 /* TableViewCell.swift in Sources */,
 				80A60B10240FEE2300A2125B /* ViewController.swift in Sources */,
+				9F1E428524132E1700B36923 /* ViewControllerlogin.swift in Sources */,
 				804297A9240FFF92009A0850 /* Registro.swift in Sources */,
 				80A60B0C240FEE2300A2125B /* AppDelegate.swift in Sources */,
 				80A60B0E240FEE2300A2125B /* SceneDelegate.swift in Sources */,
