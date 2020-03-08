@@ -54,13 +54,13 @@ class ViewControllerlogin: UIViewController {
                 return
             }
             if sqlite3_step(stmt) != SQLITE_OK {
-                self.performSegue(withIdentifier: "Slogin", sender: self)
+                self.performSegue(withIdentifier: "Svcprimary", sender: self)
             }
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "Slogin" {
+        if segue.identifier == "Svcprimary" {
             _ = segue.destination as! ViewController
         }
     }

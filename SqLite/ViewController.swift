@@ -20,7 +20,6 @@ class ViewController: UIViewController {
     var registro = [Registro]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.performSegue(withIdentifier: "Slogin", sender: self)
         let fileUrl = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent("BDSQLiteIMC.sqlite")
         if sqlite3_open(fileUrl.path, &db) != SQLITE_OK {
             alerta(title: "Error", message: "No se puede acceder a la DB")
@@ -35,18 +34,25 @@ class ViewController: UIViewController {
         if sqlite3_exec(db, tablelogin, nil, nil, nil) != SQLITE_OK{
             alerta(title: "Error", message: "No se creo login")
             return
-        }/*else{
-                let query = "Select email, password From Login"
-                if sqlite3_prepare(db, query, -1, &stmt, nil) != SQLITE_OK{
-                  //  let error = String(cString: sqlite3_errmsg(db))
-                    self.performSegue(withIdentifier: "Slogin", sender: self)
-                 //   return
-                }else if sqlite3_step(stmt) == SQLITE_ROW{
-                    let email = String(cString: sqlite3_column_text(stmt, 0))
-                   // let psw = String(cString :sqlite3_column_text(stmt, 1))
-                    alerta(title: "Bienvenido", message: "\(email)")
-                }
-        }*/
+        }
+        let query = "Select * From Login"
+        if sqlite3_prepare(db, query, -1, &stmt, nil) != SQLITE_OK{
+            let error = String(cString: sqlite3_errmsg(db))
+            //self.performSegue(withIdentifier: "Slogin", sender: self)
+            alerta(title: "Error", message: "Error \(error)")
+            return
+        }
+        if sqlite3_step(stmt) == SQLITE_ROW{
+            let email = String(cString: sqlite3_column_text(stmt, 0))
+           // let psw = String(cString :sqlite3_column_text(stmt, 1))}
+            if email != ""{
+                 alerta(title: "Bienvenido", message: "\(email)")
+            } else{
+                self.performSegue(withIdentifier: "Slogin", sender: self)
+            }
+        }else {
+            self.performSegue(withIdentifier: "Slogin", sender: self)
+        }
        // alerta(title: "Exito", message: "Se creo DB")
         
         // Do any additional setup after loading the view.
