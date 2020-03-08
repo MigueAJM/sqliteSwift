@@ -135,10 +135,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="zXp-jA-ez8"/>
                     </view>
-                    <navigationItem key="navigationItem" id="3mz-cE-APW"/>
                     <connections>
-                        <outlet property="txtpsw" destination="34T-G2-RkQ" id="d4s-Yk-9L4"/>
-                        <outlet property="txtuser" destination="TkH-vR-y9z" id="0tk-9h-mTK"/>
+                        <outlet property="txtpsw" destination="34T-G2-RkQ" id="2NS-yY-p9E"/>
+                        <outlet property="txtusuario" destination="TkH-vR-y9z" id="v69-lt-gRZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pce-Li-cQL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

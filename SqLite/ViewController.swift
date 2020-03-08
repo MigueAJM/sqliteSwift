@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     var registro = [Registro]()
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.performSegue(withIdentifier: "Slogin", sender: self)
         let fileUrl = try! FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false).appendingPathComponent("BDSQLiteIMC.sqlite")
         if sqlite3_open(fileUrl.path, &db) != SQLITE_OK {
             alerta(title: "Error", message: "No se puede acceder a la DB")
@@ -34,19 +35,20 @@ class ViewController: UIViewController {
         if sqlite3_exec(db, tablelogin, nil, nil, nil) != SQLITE_OK{
             alerta(title: "Error", message: "No se creo login")
             return
-        }
-        alerta(title: "Exito", message: "Se creo DB")
-        let query = "Select email, password From Login"
-        if sqlite3_exec(db, query, nil, nil, nil) != SQLITE_OK{
-            
-        }
-      /*  if sqlite3_prepare(db, query, -1, &stmt, nil) != SQLITE_OK{
-            let error = String(cString: sqlite3_errmsg(db))
-            alerta(title: "Error", message: "Error \(error)")
-            return
-        }else if sqlite3_step(stmt) == SQLITE_ROW{
-            self.performSegue(withIdentifier: "Slogin", sender: self)
+        }/*else{
+                let query = "Select email, password From Login"
+                if sqlite3_prepare(db, query, -1, &stmt, nil) != SQLITE_OK{
+                  //  let error = String(cString: sqlite3_errmsg(db))
+                    self.performSegue(withIdentifier: "Slogin", sender: self)
+                 //   return
+                }else if sqlite3_step(stmt) == SQLITE_ROW{
+                    let email = String(cString: sqlite3_column_text(stmt, 0))
+                   // let psw = String(cString :sqlite3_column_text(stmt, 1))
+                    alerta(title: "Bienvenido", message: "\(email)")
+                }
         }*/
+       // alerta(title: "Exito", message: "Se creo DB")
+        
         // Do any additional setup after loading the view.
     }
     @IBAction func btnguardar(_ sender: UIButton) {
@@ -54,9 +56,9 @@ class ViewController: UIViewController {
             alerta(title: "Falta informaciòn", message: "Complete el formulario")
             txtcve.becomeFirstResponder()
         }else{
-            var kg = Double(txtpeso.text!)!
-            var h = Double(txtaltura.text!)!
-            var i = kg / (h * h)
+            let kg = Double(txtpeso.text!)!
+            let h = Double(txtaltura.text!)!
+            let i = kg / (h * h)
             let clave = txtcve.text?.trimmingCharacters(in: .whitespacesAndNewlines) as! NSString
             let nombre = txtnom.text?.trimmingCharacters(in: .whitespacesAndNewlines) as! NSString
             let peso = String(kg).trimmingCharacters(in: .whitespacesAndNewlines) as! NSString

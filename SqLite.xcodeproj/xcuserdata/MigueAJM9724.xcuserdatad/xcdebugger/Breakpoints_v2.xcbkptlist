@@ -7,17 +7,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "AC9D8CF8-3060-4241-A0D5-F2A2F6718D10"
+            uuid = "C96F00EC-6720-4F8D-8D24-6BC11563C779"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "SqLite/ViewController.swift"
+            filePath = "SqLite/ViewControllerlogin.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "btnLogin(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C96F00EC-6720-4F8D-8D24-6BC11563C779 - 1c3aeff43e828396"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SqLite.ViewControllerlogin.btnLogin(__C.UIButton) -&gt; ()"
+                  moduleName = "SqLite"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/MigueAJM9724/Documents/project/sqliteSwift/SqLite/ViewControllerlogin.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "1915">
+               </Location>
+               <Location
+                  uuid = "C96F00EC-6720-4F8D-8D24-6BC11563C779 - 1c3aeff43e828396"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SqLite.ViewControllerlogin.btnLogin(__C.UIButton) -&gt; ()"
+                  moduleName = "SqLite"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/MigueAJM9724/Documents/project/sqliteSwift/SqLite/ViewControllerlogin.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "41"
+                  endingLineNumber = "41"
+                  offsetFromSymbolStart = "5164">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
