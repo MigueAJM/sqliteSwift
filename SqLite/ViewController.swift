@@ -44,12 +44,7 @@ class ViewController: UIViewController {
         }
         if sqlite3_step(stmt) == SQLITE_ROW{
             let email = String(cString: sqlite3_column_text(stmt, 0))
-           // let psw = String(cString :sqlite3_column_text(stmt, 1))}
-            if email != ""{
-                 alerta(title: "Bienvenido", message: "\(email)")
-            } else{
-                self.performSegue(withIdentifier: "Slogin", sender: self)
-            }
+            alerta(title: "Bienvenido", message: "\(email)")
         }else {
             self.performSegue(withIdentifier: "Slogin", sender: self)
         }
