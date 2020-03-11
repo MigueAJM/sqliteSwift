@@ -38,8 +38,9 @@ class TableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Lista") as! TableViewCell
         let model : Registro
         model = registro[indexPath.row]
-        cell.lbcve.text = model.nom
+        cell.lbemail.text = model.nom
         cell.lbnombre.text = String(model.imc)
+        cell.lbp.text = "HOLA"
         // Configure the cell...
         
         return cell
